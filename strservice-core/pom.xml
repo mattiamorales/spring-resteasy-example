@@ -10,7 +10,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>services-core</artifactId>
+    <artifactId>strservice-core</artifactId>
 
     <dependencies>
         <dependency>
@@ -21,7 +21,7 @@
 
         <dependency>
             <groupId>biz.ideasoft.spring-resteasy</groupId>
-            <artifactId>services-api</artifactId>
+            <artifactId>strservice-api</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
