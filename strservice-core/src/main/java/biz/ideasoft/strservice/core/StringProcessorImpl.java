@@ -6,7 +6,7 @@ import biz.ideasoft.strservice.data.LengthResult;
 /**
  * Calcula el largo de un string.
  */
-public class CalcStringLength implements StringProcessor {
+public class StringProcessorImpl implements StringProcessor {
 
   public LengthResult calculateLength(String str) {
     if (str == null) {
@@ -15,5 +15,6 @@ public class CalcStringLength implements StringProcessor {
       return new LengthResult(str, str.length());
     }
   }
+
 }
 

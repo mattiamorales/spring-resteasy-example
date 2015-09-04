@@ -24,6 +24,8 @@
             <groupId>biz.ideasoft.spring-resteasy</groupId>
             <artifactId>strservice-api</artifactId>
             <version>1.0-SNAPSHOT</version>
+            <type>test-jar</type>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>biz.ideasoft.spring-resteasy</groupId>
