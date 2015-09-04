@@ -6,18 +6,13 @@ public class LengthResult {
 
   private int length;
 
-  public LengthResult(String aContent) {
-    this.content = aContent;
-    this.length = (content == null) ? 0 : content.length();
+  public LengthResult(String str, int length) {
+    this.content = str;
+    this.length = length;
     }
 
   public String getContent() {
     return content;
-  }
-
-  public void setContent(String content) {
-    this.content = content;
-    this.length = (content == null) ? 0 : content.length();
   }
 
   public int getLength() {
