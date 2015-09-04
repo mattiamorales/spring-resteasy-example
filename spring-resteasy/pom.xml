@@ -9,10 +9,10 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>../domain</module>
-        <module>../services-api</module>
-        <module>../services-core</module>
-        <module>../services-rest</module>
+        <module>../strservice-data</module>
+        <module>../strservice-api</module>
+        <module>../strservice-core</module>
+        <module>../strservice-rest</module>
     </modules>
 
     <build>

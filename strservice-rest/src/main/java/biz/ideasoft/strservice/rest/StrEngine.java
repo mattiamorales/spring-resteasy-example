@@ -9,9 +9,9 @@ import javax.annotation.Resource;
 import javax.ws.rs.Path;
 import javax.ws.rs.core.Response;
 
-@Path("/engine")
+@Path("/strengine")
 @Service
-public class Engine implements StringServices {
+public class StrEngine implements StringServices {
 
   @Resource(name = "strProcessor")
   private StringProcessor stringProcessor;
