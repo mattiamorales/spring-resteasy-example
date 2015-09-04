@@ -13,7 +13,7 @@ import javax.ws.rs.core.Response;
 public interface StringServices {
 
   @GET
-  @Path("/calclength/{str}")
+  @Path("/calclength/{str: (.*)?}")
   @Produces(MediaType.APPLICATION_JSON)
   Response calculateLength(@PathParam("str") String str);
 }

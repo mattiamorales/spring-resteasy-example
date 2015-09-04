@@ -3,7 +3,7 @@ package biz.ideasoft.strservice.core;
 import biz.ideasoft.strservice.api.StringProcessor;
 import biz.ideasoft.strservice.data.LengthResult;
 
-public class CalcStringLength implements StringProcessor {
+public class StringProcessorImpl implements StringProcessor {
 
   public LengthResult calculateLength(String str) {
     if (str == null) {
