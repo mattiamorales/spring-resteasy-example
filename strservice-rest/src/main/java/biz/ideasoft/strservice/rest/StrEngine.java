@@ -1,9 +1,7 @@
 package biz.ideasoft.strservice.rest;
 
-import biz.ideasoft.strservice.data.LengthResult;
 import biz.ideasoft.strservice.api.StringProcessor;
-import biz.ideasoft.strservice.api.StringProcessorMock;
-
+import biz.ideasoft.strservice.data.LengthResult;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -19,8 +17,8 @@ public class StrEngine implements StringServices {
 
   @SuppressWarnings("unused")
   public void setStringProcessor(StringProcessor stringProcessor) {
-      this.stringProcessor = stringProcessor;
-    }
+    this.stringProcessor = stringProcessor;
+  }
 
   public Response calculateLength(String str) {
     LengthResult result = stringProcessor.calculateLength((str.equals("")) ? null : str);
