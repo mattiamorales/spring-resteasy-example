@@ -38,12 +38,15 @@ lazy val strserviceCore = IdProject("strservice-core").
   dependsOn(strserviceApi).
   settings(
     libraryDependencies ++= Seq(scalaTest))
+//    containerMain in Tomcat := "org.apache.catalina.startup.Bootstrap",
 
 lazy val strserviceRest = IdProject("strservice-rest").
-  dependsOn(strserviceApi, strserviceCore, strserviceMock % "compile->test").
+  dependsOn(strserviceApi, strserviceCore, strserviceMock).
   enablePlugins(WarPlugin).
   enablePlugins(JettyPlugin).
+  enablePlugins(TomcatPlugin).
   settings(
+    containerLibs in Tomcat := Seq("com.github.jsimone" % "webapp-runner" % "8.0.24.0" intransitive()),
     libraryDependencies ++= Seq(scalaTest, springContext, springCore, springBeans, springWeb,
       resteasyJaxrs, resteasyServlet, resteasyJackson2, resteasySpring, javaxServlet)
   )
