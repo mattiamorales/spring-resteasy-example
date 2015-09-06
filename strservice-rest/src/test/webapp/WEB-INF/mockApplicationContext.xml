@@ -6,6 +6,6 @@
 
        <context:component-scan base-package="biz.ideasoft.strservice.rest"/>
 
-       <bean id="strProcessor" class="biz.ideasoft.strservice.api.StringProcessorMock" />
+       <bean id="strProcessor" class="biz.ideasoft.strservice.mock.StringProcessorMock" />
 
 </beans>

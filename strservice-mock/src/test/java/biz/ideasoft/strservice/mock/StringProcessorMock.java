@@ -1,5 +1,6 @@
-package biz.ideasoft.strservice.api;
+package biz.ideasoft.strservice.mock;
 
+import biz.ideasoft.strservice.api.StringProcessor;
 import biz.ideasoft.strservice.data.LengthResult;
 
 /**
