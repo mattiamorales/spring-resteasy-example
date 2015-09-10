@@ -26,22 +26,29 @@ testOptions in Test += Tests.Cleanup(() => println("Cleanup: -------------------
 updateOptions := updateOptions.value.withCachedResolution(true)
 
 
-lazy val strserviceData = IdProject("strservice-data")
+lazy val servicesDomain = IdProject("services-domain")
 
-lazy val strserviceApi = IdProject("strservice-api").
-  dependsOn(strserviceData)
+lazy val strserviceApi = IdProject("strservice-stub/strservice-api").
+  dependsOn(servicesDomain)
 
-lazy val strserviceMock = IdProject("strservice-mock").
+lazy val strserviceMock = IdProject("strservice-stub/strservice-mock").
   dependsOn(strserviceApi)
 
-lazy val strserviceCore = IdProject("strservice-core").
+lazy val strserviceCore = IdProject("strservice-stub/strservice-core").
   dependsOn(strserviceApi).
   settings(
     libraryDependencies ++= Seq(scalaTest))
 //    containerMain in Tomcat := "org.apache.catalina.startup.Bootstrap",
 
-lazy val strserviceRest = IdProject("strservice-rest").
-  dependsOn(strserviceApi, strserviceCore, strserviceMock).
+lazy val strserviceRestResteasy = IdProject("strservice-rest/strservice-rest-resteasy").
+  dependsOn(strserviceApi).
+  settings(
+    libraryDependencies ++= Seq(scalaTest, springContext, springCore, springBeans, springWeb,
+      resteasyJaxrs, resteasyServlet, resteasyJackson2, resteasySpring, javaxServlet)
+  )
+
+lazy val strserviceRestWeb = IdProject("strservice-rest/strservice-rest-web").
+  dependsOn(strserviceApi, strserviceCore, strserviceMock, strserviceRestResteasy).
   enablePlugins(WarPlugin).
   enablePlugins(JettyPlugin).
   enablePlugins(TomcatPlugin).
@@ -53,11 +60,11 @@ lazy val strserviceRest = IdProject("strservice-rest").
 
 lazy val root = Project("root", file(".")).
   settings(commonSettings: _*).
-  aggregate(strserviceData, strserviceApi, strserviceCore, strserviceMock, strserviceRest).
+  aggregate(servicesDomain, strserviceApi, strserviceCore, strserviceMock, strserviceRestResteasy, strserviceRestWeb).
   settings()
 
 def IdProject(name: String) = {
-  Project(name, file(name)).
+  Project(name.split('/').last, file(name)).
     settings(
       commonSettings: _*
     )
