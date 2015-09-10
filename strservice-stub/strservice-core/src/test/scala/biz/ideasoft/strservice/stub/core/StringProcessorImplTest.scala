@@ -1,4 +1,4 @@
-package biz.ideasoft.strservice.core
+package biz.ideasoft.strservice.stub.core
 
 import org.scalatest.{Matchers, FlatSpec}
 
