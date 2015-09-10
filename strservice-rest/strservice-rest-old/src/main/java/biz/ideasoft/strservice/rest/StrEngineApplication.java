@@ -1,4 +1,4 @@
-package biz.ideasoft.strservice.rest;
+package biz.ideasoft.strservice.rest.resteasy;
 
 import javax.ws.rs.core.Application;
 import java.util.HashSet;

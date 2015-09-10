@@ -1,7 +1,7 @@
-package biz.ideasoft.strservice.core;
+package biz.ideasoft.strservice.stub.core;
 
-import biz.ideasoft.strservice.api.StringProcessor;
-import biz.ideasoft.strservice.data.LengthResult;
+import biz.ideasoft.strservice.stub.api.StringProcessor;
+import biz.ideasoft.services.domain.LengthResult;
 
 /**
  * Calcula el largo de un string.
