@@ -1,4 +1,4 @@
-package biz.ideasoft.strservice.data;
+package biz.ideasoft.services.domain;
 
 public class LengthResult {
 
