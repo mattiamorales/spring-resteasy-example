@@ -1,7 +1,7 @@
-package biz.ideasoft.strservice.mock;
+package biz.ideasoft.strservice.stub.mock;
 
-import biz.ideasoft.strservice.api.StringProcessor;
-import biz.ideasoft.strservice.data.LengthResult;
+import biz.ideasoft.strservice.stub.api.StringProcessor;
+import biz.ideasoft.services.domain.LengthResult;
 
 /**
  * Calcula sólo para el caso "hello", en otro caso retorna length = -1.
